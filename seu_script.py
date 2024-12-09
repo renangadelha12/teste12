@@ -55,7 +55,7 @@ topo = ['Data',
 'Intervalo de Arquivamento']
 
 if 1!=2:
-    dados='c:/AVELL/Davis/davis_teste_dash.txt'
+    dados='davis_teste_dash.txt'
     
     davis = pd.read_csv(dados, sep='\t', dtype={'Temp OUT': float, 'Out Hum': float, 'Rain': float, 'UV Index': float,'UV Dose':float,'Bar':float,'Dew Pt.':float,'Heat Index':float}, na_values=['---','------'], header=1,names=topo)
 
