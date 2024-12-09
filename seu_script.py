@@ -50,6 +50,8 @@ chart = alt.Chart(davis_selecionado1).mark_line().encode(
 
 # Exibindo o gráfico no Streamlit
 st.altair_chart(chart, use_container_width=True)
+davis_selecionado_ano = davis[davis['Year'] == ano_selecionado]
+
 precipitacao_por_mes = davis_selecionado_ano.groupby('Mês')['Precipitação'].sum().reset_index()
 
 # Calculando o total de precipitação no ano
