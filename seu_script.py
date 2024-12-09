@@ -40,4 +40,4 @@ chart = alt.Chart(davis_selecionado).mark_line().encode(
 st.altair_chart(chart, use_container_width=True)
 
 # Exibindo tabela com os dados selecionados
-st.write(davis_selecionado[['Date', 'Temperatura', 'Precipitação']])
+st.write(davis_selecionado[['Date','Time', 'Temperatura', 'Precipitação']])
