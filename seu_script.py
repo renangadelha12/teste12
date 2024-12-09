@@ -30,7 +30,7 @@ dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
 # Filtrando os dados
 #davis_selecionado = davis[(davis['Year'] == ano_selecionado) & (davis['Mês'] == mes_selecionado)]
 davis_selecionado1 = davis[davis['Date'] == dia_selecionado]
-davis_selecionado1['Hora'] = pd.to_datetime(davis_selecionado1['Time'], format='%H:%M').dt.time
+davis_selecionado1['Hora'] = davis_selecionado1['Time']
 
 # Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado1).mark_line().encode(
