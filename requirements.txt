@@ -1,4 +1,4 @@
 dash
 streamlit
 plotly
-matplotlib.pyplot
+matplotlib
