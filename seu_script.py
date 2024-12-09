@@ -51,17 +51,18 @@ chart = alt.Chart(davis_selecionado1).mark_line().encode(
 # Exibindo o gráfico no Streamlit
 st.altair_chart(chart, use_container_width=True)
 
+
 wind_rose = alt.Chart(davis_selecionado1).mark_bar().encode(
-    theta=alt.Theta(field="Wind Dir", type="quantitative", bin=alt.Bin(maxbins=24)),  # Direção do vento no eixo angular
-    radius=alt.Radius(field="Velocidade do Vento", type="quantitative"),  # Intensidade do vento
+    theta=alt.Theta(field="Wind Dir", type="quantitative", bin=alt.Bin(maxbins=16)),  # Direção do vento no eixo angular (dividido em 16 bins)
+    radius=alt.Radius(field="Velocidade do Vento", type="quantitative"),  # Intensidade do vento no eixo radial
     color=alt.Color(field="Wind Dir", type="quantitative", scale=alt.Scale(scheme='category20c')),  # Cor por direção
-    tooltip=["Wind Dir", "Velocidade do Vento:Q"]  # Tooltip para exibir direção e velocidade do vento
+    tooltip=["Wind Dir", "Velocidade do Vento:Q"]  # Tooltip para mostrar direção e velocidade
 ).properties(
     title='Rosa dos Ventos - Dia Selecionado',
     width=500,
     height=500
 ).configure_view(
-    stroke=None  # Remover as bordas
+    stroke=None  # Remover bordas do gráfico
 )
 
 # Exibindo o gráfico no Streamlit
