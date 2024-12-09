@@ -11,7 +11,7 @@ davis["Date"] = pd.to_datetime(davis["Date"])
 davis['Dia'] = davis['Date'].dt.day
 davis['Year'] = davis['Date'].dt.year
 davis['Mês'] = davis['Date'].dt.month
-davis['Time'] = pd.to_datetime(davis['Time'], format='%H:%M').dt.time
+davis_selecionado1['Time'] = pd.to_datetime(davis_selecionado1['Time'], format='%H:%M').dt.time
 
 
 # Definindo as variáveis para as opções no Streamlit
