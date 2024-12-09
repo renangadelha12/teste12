@@ -31,10 +31,10 @@ davis_selecionado1 = davis[davis['Date'] == dia_selecionado]
 #    dia_escholido_dropdown=davis[davis['Data'] == s_day]
 
 # Exibindo gráfico com Altair
-chart = alt.Chart(davis_selecionado).mark_line().encode(
-    x='Date:T',
+chart = alt.Chart(davis_selecionado1).mark_line().encode(
+    x='Time:T',
     y='Temperatura:Q',
-    tooltip=['Date:T', 'Temperatura:Q']
+    tooltip=['Time:T', 'Temperatura:Q']
 ).properties(
     title='Temperatura ao longo do mês'
 )
