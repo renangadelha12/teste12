@@ -34,13 +34,12 @@ davis_selecionado1['Time'] = pd.to_datetime(davis_selecionado1['Time'], format='
 
 # Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado1).mark_line().encode(
-    x=alt.X('Time:T', title='Hora do Dia'),  # Especificando o tipo temporal para o eixo X
-    y=alt.Y('Temperatura:Q', title='Temperatura (°C)'),  # Temperatura no eixo Y
-    tooltip=['Time:T', 'Temperatura:Q']  # Exibindo a hora e a temperatura no tooltip
+    x=alt.X('Time:T', title='Hora do Dia', axis=alt.Axis(format='%H:%M')),  # Formato de hora no eixo X
+    y=alt.Y('Temperatura:Q', title='Temperatura (°C)'),
+    tooltip=['Time:T', 'Temperatura:Q']
 ).properties(
     title='Temperatura ao longo do dia selecionado'
 )
-
 st.altair_chart(chart, use_container_width=True)
 
 # Exibindo tabela com os dados selecionados
