@@ -30,13 +30,13 @@ dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
 # Filtrando os dados
 #davis_selecionado = davis[(davis['Year'] == ano_selecionado) & (davis['Mês'] == mes_selecionado)]
 davis_selecionado1 = davis[davis['Date'] == dia_selecionado]
-davis_selecionado1['Hora'] = pd.to_datetime(davis_selecionado1['Time'], format='%H:%M').dt.time
+#davis_selecionado1['Hora'] = pd.to_datetime(davis_selecionado1['Time'], format='%H:%M').dt.time
 
 # Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado1).mark_line().encode(
-    x=alt.X('Hora:T', title='Hora do Dia'),  # Agora 'Hora' é do tipo temporal
+    x=alt.X('Hora', title='Hora do Dia'),  # Agora 'Hora' é do tipo temporal
     y=alt.Y('Temperatura', title='Temperatura (°C)'),
-    tooltip=['Hora:T', 'Temperatura:Q']  # Exibindo hora e temperatura no tooltip
+    tooltip=['Hora', 'Temperatura:Q']  # Exibindo hora e temperatura no tooltip
 ).properties(
     title='Temperatura ao longo do dia selecionado'
 )
