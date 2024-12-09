@@ -31,6 +31,13 @@ dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
 #davis_selecionado = davis[(davis['Year'] == ano_selecionado) & (davis['Mês'] == mes_selecionado)]
 davis_selecionado1 = davis[davis['Date'] == dia_selecionado]
 davis_selecionado1['Hora'] = davis_selecionado1['Time']
+davis_selecionado1['Hi Dir'] = davis_selecionado1['Hi Dir'].replace({'N': 0, 'NNE': 22.5, 'NE': 45.0, 'ENE': 67.5, 'E': 90.0, 'ESE': 112.5,
+                                         'SE': 135.0, 'SSE': 157.5, 'S': 180, 'SSW': 202.5, 'SW': 225.0, 'WSW': 247.5,
+                                         'W': 270, 'WNW': 292.5, 'NW': 315, 'NNW': 337.5})
+
+davis_selecionado1['Wind Dir'] = davis_selecionado1['Wind Dir'].replace({'N': 0, 'NNE': 22.5, 'NE': 45.0, 'ENE': 67.5, 'E': 90.0, 'ESE': 112.5,
+                                              'SE': 135.0, 'SSE': 157.5, 'S': 180, 'SSW': 202.5, 'SW': 225.0, 'WSW': 247.5,
+                                              'W': 270, 'WNW': 292.5, 'NW': 315, 'NNW': 337.5})
 
 # Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado1).mark_line().encode(
