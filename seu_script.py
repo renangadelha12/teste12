@@ -11,7 +11,7 @@ Abaixo veremos a tabela de dados carregada do arquivo CSV
 """)
 
 # Importando a base de dados e transformando em um DataFrame do pandas
-df = pd.read_csv('NSE-TATAGLOBAL11.csv', sep=',') 
+df = pd.read_csv('davis_teste_dash.txt', sep=',') 
 
 # Exibindo o DataFrame na interface do Streamlit
 st.dataframe(df)  # ou st.write(df) para exibir de outra forma
