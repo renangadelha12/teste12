@@ -11,7 +11,6 @@ davis["Date"] = pd.to_datetime(davis["Date"])
 davis['Dia'] = davis['Date'].dt.day
 davis['Year'] = davis['Date'].dt.year
 davis['Mês'] = davis['Date'].dt.month
-davis_selecionado1['Time'] = pd.to_datetime(davis_selecionado1['Time'], format='%H:%M').dt.time
 
 
 # Definindo as variáveis para as opções no Streamlit
@@ -31,7 +30,7 @@ dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
 # Filtrando os dados
 davis_selecionado = davis[(davis['Year'] == ano_selecionado) & (davis['Mês'] == mes_selecionado)]
 davis_selecionado1 = davis[davis['Date'] == dia_selecionado]
-#    dia_escholido_dropdown=davis[davis['Data'] == s_day]
+davis_selecionado1['Time'] = pd.to_datetime(davis_selecionado1['Time'], format='%H:%M').dt.time
 
 # Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado1).mark_line().encode(
