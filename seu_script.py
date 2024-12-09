@@ -37,7 +37,7 @@ davis_selecionado1 = davis[davis['Date'] == dia_selecionado]
 chart = alt.Chart(davis_selecionado1).mark_line().encode(
     x='Time:T',
     y='Temperatura:Q',
-    tooltip=['Time:T', 'Temperatura:Q']
+    #tooltip=['Time:T', 'Temperatura:Q']
 ).properties(
     title='Temperatura ao longo do dia selecionado'
 )
