@@ -18,7 +18,7 @@ meses_lista = list(davis['Mês'].unique())
 dias_lista=list(davis['Date'].unique())
 
 # Streamlit UI
-st.title('Dashboard de Dados Meteorológicos')
+st.title('Dashboard de Dados Meteorológicos',color='green')
 
 # Seleção de ano , mês e dia
 ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
