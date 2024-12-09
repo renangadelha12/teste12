@@ -17,7 +17,7 @@ anos_lista = list(davis['Year'].unique())
 meses_lista = list(davis['Mês'].unique())
 
 # Streamlit UI
-st.title('Dashboard de Dados Meteorológicos - Estação Davis')
+st.title('Dashboard de Dados Meteorológicos')
 
 # Seleção de ano e mês
 ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
@@ -26,10 +26,16 @@ mes_selecionado = st.selectbox('Selecione o mês', meses_lista, index=0)
 # Filtrando os dados
 davis_selecionado = davis[(davis['Year'] == ano_selecionado) & (davis['Mês'] == mes_selecionado)]
 
-# Exibindo gráfico
-fig = px.scatter(davis_selecionado, x='Date', y='Temperatura', title='Temperatura ao longo do mês')
-st.plotly_chart(fig)
+# Exibindo gráfico com Altair
+chart = alt.Chart(davis_selecionado).mark_line().encode(
+    x='Date:T',
+    y='Temperatura:Q',
+    tooltip=['Date:T', 'Temperatura:Q']
+).properties(
+    title='Temperatura ao longo do mês'
+)
 
-# Exibindo tabela
+st.altair_chart(chart, use_container_width=True)
+
+# Exibindo tabela com os dados selecionados
 st.write(davis_selecionado[['Date', 'Temperatura', 'Precipitação']])
-
