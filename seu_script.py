@@ -20,10 +20,8 @@ meses_lista = list(davis['Mês'].unique())
 dias_lista=list(davis['Date'].unique())
 
 # Usando HTML para estilizar o título
-st.markdown('<h1 style="color:red">Dashboard de Dados Meteorológicos</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style="color:green">Dashboard de Dados Meteorológicos</h1>', unsafe_allow_html=True)
 
-# Streamlit UI
-st.title('Dashboard de Dados Meteorológicos')
 
 # Seleção de ano , mês e dia
 ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
