@@ -27,7 +27,7 @@ dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
 
 # Filtrando os dados
 davis_selecionado = davis[(davis['Year'] == ano_selecionado) & (davis['Mês'] == mes_selecionado)]
-davis_selecionado1 = davis[davis['Date'==f'{dia_selecionado}']]
+davis_selecionado1 = davis[davis['Date'==dia_selecionado}]
 # Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado).mark_line().encode(
     x='Date:T',
