@@ -23,7 +23,7 @@ st.markdown('<h1 style="color:green">Dashboard de Dados Meteorológicos</h1>', u
 
 
 # Seleção de ano , mês e dia
-#ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
+ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
 #mes_selecionado = st.selectbox('Selecione o mês', meses_lista, index=0)
 dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
 
@@ -50,6 +50,26 @@ chart = alt.Chart(davis_selecionado1).mark_line().encode(
 
 # Exibindo o gráfico no Streamlit
 st.altair_chart(chart, use_container_width=True)
+precipitacao_por_mes = davis_selecionado_ano.groupby('Mês')['Precipitação'].sum().reset_index()
+
+# Calculando o total de precipitação no ano
+total_precipitacao_ano = precipitacao_por_mes['Precipitação'].sum()
+
+# Calculando a proporção de precipitação para cada mês
+precipitacao_por_mes['Proporcao'] = precipitacao_por_mes['Precipitação'] / total_precipitacao_ano * 100
+
+# Criando o gráfico setorial de distribuição de precipitação mensal
+chart_rain = alt.Chart(precipitacao_por_mes).mark_arc().encode(
+    theta=alt.Theta('Proporcao:Q', title='Proporção de Precipitação no Ano (%)'),
+    color=alt.Color('Mês:O', title='Mês'),
+    tooltip=['Mês:O', 'Precipitação:Q', 'Proporcao:Q']
+).properties(
+    title=f'Distribuição da Precipitação no Ano {ano_selecionado}'
+)
+
+# Exibindo o gráfico no Streamlit
+st.altair_chart(chart_rain, use_container_width=True)
+
 
 
 
