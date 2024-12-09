@@ -35,9 +35,9 @@ davis_selecionado1 = davis[davis['Date'] == dia_selecionado]
 
 # Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado1).mark_line().encode(
-    x='Time:T',
-    y='Temperatura:Q',
-    tooltip=['Time:T', 'Temperatura:Q']
+    x=alt.X('Time:T', title='Hora do Dia'),  # Especificando o tipo temporal para o eixo X
+    y=alt.Y('Temperatura:Q', title='Temperatura (°C)'),  # Temperatura no eixo Y
+    tooltip=['Time:T', 'Temperatura:Q']  # Exibindo a hora e a temperatura no tooltip
 ).properties(
     title='Temperatura ao longo do dia selecionado'
 )
