@@ -43,8 +43,8 @@ topo = ['Date',
 'ISS Recept',
 'Arc Int.']
 if 1!=2:
-    dados='c:/AVELL/Davis/dall.txt'
-    dados='c:/Users/LAVAT/Desktop/davis_teste_dash.txt'
+    
+    dados='davis_teste_dash.txt'
     #c:\Users\LAVAT\Desktop\
 
     
