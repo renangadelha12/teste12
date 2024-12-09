@@ -31,6 +31,8 @@ dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
 #davis_selecionado = davis[(davis['Year'] == ano_selecionado) & (davis['Mês'] == mes_selecionado)]
 davis_selecionado1 = davis[davis['Date'] == dia_selecionado]
 davis_selecionado1['Time'] = pd.to_datetime(davis_selecionado1['Time'], format='%H:%M').dt.time
+davis_selecionado1['Time'] = pd.to_datetime('2024-01-01 ' + davis_selecionado1['Time'].astype(str), format='%Y-%m-%d %H:%M')
+
 
 # Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado1).mark_line().encode(
