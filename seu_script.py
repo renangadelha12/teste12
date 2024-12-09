@@ -17,7 +17,7 @@ anos_lista = list(davis['Year'].unique())
 meses_lista = list(davis['Mês'].unique())
 
 # Streamlit UI
-st.title('Dashboard de Dados Meteorológicos')
+st.title('Dashboard de Dados Meteorológicos - Estação Davis')
 
 # Seleção de ano e mês
 ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
