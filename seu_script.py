@@ -15,7 +15,7 @@ davis['Mês'] = davis['Date'].dt.month
 # Definindo as variáveis para as opções no Streamlit
 anos_lista = list(davis['Year'].unique())
 meses_lista = list(davis['Mês'].unique())
-dias_lista=list(davis['Dia'].unique())
+dias_lista=list(davis['Date'].unique())
 
 # Streamlit UI
 st.title('Dashboard de Dados Meteorológicos')
@@ -27,7 +27,7 @@ dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
 
 # Filtrando os dados
 davis_selecionado = davis[(davis['Year'] == ano_selecionado) & (davis['Mês'] == mes_selecionado)]
-davis_selecionado1 = davis[davis['Date'==f'{mes_selecionado}-{mes_selecionado}-{ano_selecionado}']]
+#davis_selecionado1 = davis[davis['Date'==f'{mes_selecionado}-{mes_selecionado}-{ano_selecionado}']]
 # Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado).mark_line().encode(
     x='Date:T',
@@ -40,4 +40,4 @@ chart = alt.Chart(davis_selecionado).mark_line().encode(
 st.altair_chart(chart, use_container_width=True)
 
 # Exibindo tabela com os dados selecionados
-st.write(davis_selecionado1[['Date', 'Temperatura', 'Precipitação']])
+st.write(davis_selecionado[['Date', 'Temperatura', 'Precipitação']])
