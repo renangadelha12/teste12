@@ -27,7 +27,7 @@ dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
 
 # Filtrando os dados
 davis_selecionado = davis[(davis['Year'] == ano_selecionado) & (davis['Mês'] == mes_selecionado)]
-davis_selecionado1 = davis[davis['Date']==dia_selecionado]
+davis_selecionado1 = davis[davis['Date'] == dia_selecionado]
 #    dia_escholido_dropdown=davis[davis['Data'] == s_day]
 
 # Exibindo gráfico com Altair
