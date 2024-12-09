@@ -45,8 +45,6 @@ topo = ['Date',
 if 1!=2:
     
     dados='davis_teste_dash.txt'
-    #c:\Users\LAVAT\Desktop\
-
     
     davis = pd.read_csv(dados, sep='\t', dtype={'Temp OUT': float, 'Out Hum': float, 'Rain': float, 'UV Index': float,'UV Dose':float,'Bar':float,'Dew Pt.':float,'Heat Index':float}, na_values=['---','------'], header=1,names=topo)
 
