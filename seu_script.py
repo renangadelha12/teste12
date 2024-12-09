@@ -18,7 +18,9 @@ davis['Time'] = pd.to_datetime(davis['Time'], format='%H:%M').dt.time
 anos_lista = list(davis['Year'].unique())
 meses_lista = list(davis['Mês'].unique())
 dias_lista=list(davis['Date'].unique())
-st.markdown('<title style="color:red">Esta palavra está em vermelho!</title>', unsafe_allow_html=True)
+
+# Usando HTML para estilizar o título
+st.markdown('<h1 style="color:red">Dashboard de Dados Meteorológicos</h1>', unsafe_allow_html=True)
 
 # Streamlit UI
 st.title('Dashboard de Dados Meteorológicos')
