@@ -14,8 +14,8 @@ davis['Mês'] = davis['Date'].dt.month
 
 
 # Definindo as variáveis para as opções no Streamlit
-anos_lista = list(davis['Year'].unique())
-meses_lista = list(davis['Mês'].unique())
+#anos_lista = list(davis['Year'].unique())
+#meses_lista = list(davis['Mês'].unique())
 dias_lista=list(davis['Date'].unique())
 
 # Usando HTML para estilizar o título
@@ -23,8 +23,8 @@ st.markdown('<h1 style="color:green">Dashboard de Dados Meteorológicos</h1>', u
 
 
 # Seleção de ano , mês e dia
-ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
-mes_selecionado = st.selectbox('Selecione o mês', meses_lista, index=0)
+#ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
+#mes_selecionado = st.selectbox('Selecione o mês', meses_lista, index=0)
 dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
 
 # Filtrando os dados
@@ -34,9 +34,10 @@ davis_selecionado1['Time'] = pd.to_datetime(davis_selecionado1['Time'], format='
 
 # Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado1).mark_line().encode(
-    x=alt.X('Time:T', title='Hora do Dia'),  # Formato de hora no eixo X
-    y=alt.Y('Temperatura:Q', title='Temperatura (°C)'),
-    tooltip=['Time:T', 'Temperatura:Q']
+    x=alt.X('Time', title='Hora do Dia'),  # Formato de hora no eixo X
+    y=alt.Y('Temperatura', title='Temperatura (°C)'),
+    tooltip=['Time', 'Temperatura:Q']
+    
 ).properties(
     title='Temperatura ao longo do dia selecionado'
 )
