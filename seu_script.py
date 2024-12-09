@@ -68,6 +68,6 @@ wind_rose = alt.Chart(davis_selecionado1).mark_bar().encode(
 st.altair_chart(wind_rose, use_container_width=True)
 
 # Exibindo os dados em formato de tabela
-st.write(davis_selecionado1[['Hora', 'Temperatura', 'Precipitação']])
+st.write(davis_selecionado1[['Hora', 'Temperatura', 'Precipitação','Wind Dir','Velocidade do Vento']])
 
 
