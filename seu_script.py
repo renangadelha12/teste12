@@ -14,8 +14,8 @@ davis['Mês'] = davis['Date'].dt.month
 
 
 # Definindo as variáveis para as opções no Streamlit
-#anos_lista = list(davis['Year'].unique())
-#meses_lista = list(davis['Mês'].unique())
+anos_lista = list(davis['Year'].unique())
+meses_lista = list(davis['Mês'].unique())
 dias_lista=list(davis['Date'].unique())
 
 # Usando HTML para estilizar o título
