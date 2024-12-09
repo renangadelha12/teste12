@@ -63,7 +63,7 @@ precipitacao_por_mes['Proporcao'] = precipitacao_por_mes['Precipitação'] / tot
 # Criando o gráfico setorial de distribuição de precipitação mensal
 chart_rain = alt.Chart(precipitacao_por_mes).mark_arc().encode(
     theta=alt.Theta('Proporcao:Q', title='Proporção de Precipitação no Ano (%)'),
-    color=alt.Color('Mês:O', title='Mês'),
+    color=alt.Color('Mês:O', scale=alt.Scale(scheme='category20b'), title='Mês'),  
     tooltip=['Mês:O', 'Precipitação:Q', 'Proporcao:Q']
 ).properties(
     title=f'Distribuição da Precipitação no Ano {ano_selecionado}'
