@@ -18,6 +18,7 @@ davis['Time'] = pd.to_datetime(davis['Time'], format='%H:%M').dt.time
 anos_lista = list(davis['Year'].unique())
 meses_lista = list(davis['Mês'].unique())
 dias_lista=list(davis['Date'].unique())
+st.markdown('<title style="color:red">Esta palavra está em vermelho!</title>', unsafe_allow_html=True)
 
 # Streamlit UI
 st.title('Dashboard de Dados Meteorológicos')
@@ -38,10 +39,10 @@ chart = alt.Chart(davis_selecionado1).mark_line().encode(
     y='Temperatura:Q',
     tooltip=['Time:T', 'Temperatura:Q']
 ).properties(
-    title='Temperatura ao longo do mês'
+    title='Temperatura ao longo do dia selecionado'
 )
 
 st.altair_chart(chart, use_container_width=True)
 
 # Exibindo tabela com os dados selecionados
-st.write(davis_selecionado1[['Time', 'Temperatura', 'Precipitação']])
+#st.write(davis_selecionado1[['Time', 'Temperatura', 'Precipitação']])
