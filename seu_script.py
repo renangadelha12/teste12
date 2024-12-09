@@ -27,7 +27,7 @@ mes_selecionado = st.selectbox('Selecione o mês', meses_lista, index=0)
 davis_selecionado = davis[(davis['Year'] == ano_selecionado) & (davis['Mês'] == mes_selecionado)]
 
 # Exibindo gráfico
-fig = px.sccater(davis_selecionado, x='Date', y='Temperatura', title='Temperatura ao longo do mês')
+fig = px.scatter(davis_selecionado, x='Date', y='Temperatura', title='Temperatura ao longo do mês')
 st.plotly_chart(fig)
 
 # Exibindo tabela
