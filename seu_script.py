@@ -19,7 +19,7 @@ meses_lista = list(davis['Mês'].unique())
 dias_lista=list(davis['Date'].unique())
 
 # Usando HTML para estilizar o título
-st.markdown('<h1 style="color:green">Dashboard de Dados Meteorológicos</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style="color:green">Dashboard de Dados Meteorológicos - Vantage Pro 2</h1>', unsafe_allow_html=True)
 
 
 # Seleção de ano , mês e dia
