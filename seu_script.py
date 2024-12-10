@@ -11,6 +11,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+st.image("logo inpe.png", caption="Descrição da Imagem", width=400)
+
 
 # Adicionar CSS para personalizar o layout e o fundo
 st.markdown(
