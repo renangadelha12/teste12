@@ -3,19 +3,9 @@ import pandas as pd
 import plotly.express as px
 import altair as alt
 st.set_page_config(page_title="Dashboard de Dados Meteorológicos", layout="wide")
-st.markdown(
-    """
-    <div style="text-align: center; margin-bottom: 20px;">
-        <img src="logo l.png" alt="Logo do INPE" style="width: 50%; height: auto; border-radius: 10px;">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+import streamlit as st
 
-# Adicionar uma imagem usando st.image (com legenda e largura controlada)
-st.image("logo l.png", width=200)
-
-# Adicionar CSS para personalizar o layout e o fundo da página
+# Adicionar CSS para personalizar o layout, o fundo e a imagem
 st.markdown(
     """
     <style>
@@ -23,6 +13,7 @@ st.markdown(
     .stApp {
         background-color: #e6f7ff; /* Azul claro */
     }
+
     /* Centralizar o conteúdo e controlar largura */
     .main {
         max-width: 85%; /* Define a largura máxima */
@@ -30,10 +21,40 @@ st.markdown(
         padding: 20px; /* Adiciona espaço interno */
         border-radius: 10px; /* Suaviza bordas */
     }
+
+    /* Centralizar a imagem e configurar tamanho */
+    .logo-container {
+        text-align: center; /* Centralizar a imagem */
+        margin-bottom: 20px; /* Espaço abaixo da imagem */
+    }
+
+    .logo-container img {
+        width: 50%; /* Largura da imagem */
+        height: auto; /* Manter proporção */
+        border-radius: 10px; /* Suavizar bordas da imagem */
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
+
+# Tente carregar a imagem usando o caminho correto
+# Se a imagem estiver na mesma pasta que o script, use o nome do arquivo diretamente
+try:
+    st.markdown(
+        """
+        <div class="logo-container">
+            <img src="logo inpe.png" alt="Logo do INPE">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+except Exception as e:
+    st.error(f"Erro ao carregar a imagem: {e}")
+
+# Exemplo de uso de uma outra imagem com o st.image
+st.image("logo inpe.png", caption="Logo do INPE", width=400)
+
 #parte de pegar os dados
 topo = ['Date', 'Time', 'Temperatura', 'Hi temp', 'Low Temp', 'Umidade', 'Dew Pt.', 'Velocidade do Vento', 'Wind Dir', 'Wind Run', 'Hi Speed', 'Hi Dir', 'Wind Chill', 'Heat Index', 'THW Index', 'THSW Index', 'Pressão Atm.', 'Precipitação', 'Rain Rate', 'Solar Rad', 'Solar Energy', 'Hi Solar Rad', 'UVI', 'UV Dose', 'Hi UV', 'Heat D-D', 'Cool D-D', 'In Temp', 'In Hum', 'In Dew', 'In Heat', 'In EMC', 'In Air Density', 'ET', 'Wind Samp', 'Wind TX', 'ISS Recept', 'Arc Int.']
 dados = 'dall.txt'
