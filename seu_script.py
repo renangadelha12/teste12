@@ -33,27 +33,13 @@ st.markdown(
         height: auto; /* Manter proporção */
         border-radius: 10px; /* Suavizar bordas da imagem */
     }
-    </style>
-    <div class="logo-container">
-            <img src="logo l.png" alt="Logo do LAVAT">
-        </div>
+    
     """,
     unsafe_allow_html=True
 )
 
 # Tente carregar a imagem usando o caminho correto
-# Se a imagem estiver na mesma pasta que o script, use o nome do arquivo diretamente
-try:
-    st.markdown(
-        """
-        <div class="logo-container">
-            <img src="logo l.png" alt="Logo do LAVAT">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-except Exception as e:
-    st.error(f"Erro ao carregar a imagem: {e}")
+
 
 # Exemplo de uso de uma outra imagem com o st.image
 st.image("logo l.png", caption="Logo do LAVAT", width=200)
