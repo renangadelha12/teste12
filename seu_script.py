@@ -6,14 +6,14 @@ st.set_page_config(page_title="Dashboard de Dados Meteorológicos", layout="wide
 st.markdown(
     """
     <div style="text-align: center; margin-bottom: 20px;">
-        <img src="logo inpe.png" alt="Logo do INPE" style="width: 50%; height: auto; border-radius: 10px;">
+        <img src="logo l.png" alt="Logo do INPE" style="width: 50%; height: auto; border-radius: 10px;">
     </div>
     """,
     unsafe_allow_html=True
 )
 
 # Adicionar uma imagem usando st.image (com legenda e largura controlada)
-st.image("logo inpe.png", caption="Logo do INPE", width=400)
+st.image("logo l.png", width=200)
 
 # Adicionar CSS para personalizar o layout e o fundo da página
 st.markdown(
