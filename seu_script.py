@@ -34,6 +34,9 @@ st.markdown(
         border-radius: 10px; /* Suavizar bordas da imagem */
     }
     </style>
+    <div class="logo-container">
+            <img src="logo l.png" alt="Logo do LAVAT">
+        </div>
     """,
     unsafe_allow_html=True
 )
@@ -53,7 +56,7 @@ except Exception as e:
     st.error(f"Erro ao carregar a imagem: {e}")
 
 # Exemplo de uso de uma outra imagem com o st.image
-st.image("logo l.png", caption="Logo do LAVAT", width=400)
+st.image("logo l.png", caption="Logo do LAVAT", width=200)
 
 #parte de pegar os dados
 topo = ['Date', 'Time', 'Temperatura', 'Hi temp', 'Low Temp', 'Umidade', 'Dew Pt.', 'Velocidade do Vento', 'Wind Dir', 'Wind Run', 'Hi Speed', 'Hi Dir', 'Wind Chill', 'Heat Index', 'THW Index', 'THSW Index', 'Pressão Atm.', 'Precipitação', 'Rain Rate', 'Solar Rad', 'Solar Energy', 'Hi Solar Rad', 'UVI', 'UV Dose', 'Hi UV', 'Heat D-D', 'Cool D-D', 'In Temp', 'In Hum', 'In Dew', 'In Heat', 'In EMC', 'In Air Density', 'ET', 'Wind Samp', 'Wind TX', 'ISS Recept', 'Arc Int.']
