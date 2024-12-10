@@ -43,7 +43,7 @@ davis_selecionado1['Hora'] = pd.to_datetime(davis_selecionado1['Hora'], format='
 
 # Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado1).mark_line().encode(
-    x=alt.X('Hora:T', title='Hora do Dia'),
+    x=alt.X('Hora:O', title='Hora do Dia'),  # ":O" para ordinal (categórico)
     y=alt.Y(f'{variavel_grafico}:Q', title=f'{variavel_grafico}'),  # Referência correta à variável dinâmica
     tooltip=['Hora', 'Temperatura:Q']  # Exibindo hora e temperatura no tooltip
 ).properties(
