@@ -39,19 +39,18 @@ davis_selecionado1['Hi Dir'] = davis_selecionado1['Hi Dir'].replace({'N': 0, 'NN
 davis_selecionado1['Wind Dir'] = davis_selecionado1['Wind Dir'].replace({'N': 0, 'NNE': 22.5, 'NE': 45.0, 'ENE': 67.5, 'E': 90.0, 'ESE': 112.5,
                                               'SE': 135.0, 'SSE': 157.5, 'S': 180, 'SSW': 202.5, 'SW': 225.0, 'WSW': 247.5,
                                               'W': 270, 'WNW': 292.5, 'NW': 315, 'NNW': 337.5})
-davis_selecionado1['Hora'] = pd.to_datetime(davis_selecionado1['Hora'], format='%H:%M').dt.time
+davis_selecionado1['Hora'] = pd.to_datetime(davis_selecionado1['Hora'], format='%H:%M').dt.strftime('%H:%M')
 
-# Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado1).mark_line().encode(
-    x=alt.X('Hora:O', title='Hora do Dia'),  # ":O" para ordinal (categórico)
-    y=alt.Y(f'{variavel_grafico}:Q', title=f'{variavel_grafico}'),  # Referência correta à variável dinâmica
-    tooltip=['Hora', 'Temperatura:Q']  # Exibindo hora e temperatura no tooltip
+    x=alt.X('Hora:O', title='Hora do Dia'),
+    y=alt.Y(f'{variavel_grafico}:Q', title=f'{variavel_grafico}'), 
+    tooltip=['Hora', 'Temperatura:Q']
 ).properties(
     title='Temperatura ao longo do dia selecionado'
 )
 
-# Exibindo o gráfico no Streamlit
 st.altair_chart(chart, use_container_width=True)
+
 davis_selecionado_ano = davis[davis['Year'] == ano_selecionado]
 
 precipitacao_por_mes = davis_selecionado_ano.groupby('Mês')['Precipitação'].sum().reset_index()
