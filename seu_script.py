@@ -43,7 +43,7 @@ davis_selecionado1['Wind Dir'] = davis_selecionado1['Wind Dir'].replace({'N': 0,
 # Exibindo gráfico com Altair
 chart = alt.Chart(davis_selecionado1).mark_line().encode(
     x=alt.X('Hora', title='Hora do Dia'),  # Agora 'Hora' é do tipo temporal
-    y=alt.Y('variavel_grafico', title=f'{variavel_grafico}'),
+    y=alt.Y(f'{variavel_grafico}:Q', title=f'{variavel_grafico}'),  # Referência correta à variável dinâmica
     tooltip=['Hora', 'Temperatura:Q']  # Exibindo hora e temperatura no tooltip
 ).properties(
     title='Temperatura ao longo do dia selecionado'
@@ -74,6 +74,6 @@ chart_rain = alt.Chart(precipitacao_por_mes).mark_arc().encode(
 st.altair_chart(chart_rain, use_container_width=True)
 
 # Exibindo os dados em formato de tabela
-st.write(davis_selecionado1[['Hora', 'Temperatura', 'Precipitação','Wind Dir','Velocidade do Vento']])
+#st.write(davis_selecionado1[['Hora', 'Temperatura', 'Precipitação','Wind Dir','Velocidade do Vento']])
 
 
