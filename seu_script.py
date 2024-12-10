@@ -14,7 +14,7 @@ st.markdown(
     }
     /* Centralizar o conteúdo e controlar largura */
     .main {
-        max-width: 90%; /* Define a largura máxima */
+        max-width: 85%; /* Define a largura máxima */
         margin: 0 auto; /* Centraliza horizontalmente */
         padding: 20px; /* Adiciona espaço interno */
         border-radius: 10px; /* Suaviza bordas */
@@ -41,7 +41,7 @@ meses_lista = list(davis['Mês'].unique())
 dias_lista=list(davis['Date'].unique())
 variaveis=list(topo)
 # Usando HTML para estilizar o título
-st.markdown('<h1 style="color:green">Dashboard de Dados Meteorológicos - Vantage Pro 2</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style="color:orange">Dashboard de Dados Meteorológicos - Vantage Pro 2</h1>', unsafe_allow_html=True)
 
 
 # Seleção de ano , mês e dia
