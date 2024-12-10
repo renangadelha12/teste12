@@ -17,7 +17,7 @@ davis['Mês'] = davis['Date'].dt.month
 anos_lista = list(davis['Year'].unique())
 meses_lista = list(davis['Mês'].unique())
 dias_lista=list(davis['Date'].unique())
-
+variaveis=list(topo)
 # Usando HTML para estilizar o título
 st.markdown('<h1 style="color:green">Dashboard de Dados Meteorológicos - Vantage Pro 2</h1>', unsafe_allow_html=True)
 
@@ -26,6 +26,7 @@ st.markdown('<h1 style="color:green">Dashboard de Dados Meteorológicos - Vantag
 ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
 #mes_selecionado = st.selectbox('Selecione o mês', meses_lista, index=0)
 dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
+variavel_grafico=st.selecetbox('Selecione a variável para graficar',variaveis,index=0)
 
 # Filtrando os dados
 #davis_selecionado = davis[(davis['Year'] == ano_selecionado) & (davis['Mês'] == mes_selecionado)]
