@@ -11,7 +11,7 @@ st.markdown(
     <style>
     /* Alterar fundo de toda a página */
     .stApp {
-        background-color: #e6f7ff; /* Azul claro */
+        background-color: #1e3a5f; /* Azul claro */
     }
 
     /* Centralizar o conteúdo e controlar largura */
