@@ -3,7 +3,14 @@ import pandas as pd
 import plotly.express as px
 import altair as alt
 st.set_page_config(page_title="Dashboard de Dados Meteorológicos", layout="wide")
-st.image("logo inpe.png", caption="Logomarca do INPE)", use_column_width=True)
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <img src="logo inpe.png" alt="Descrição" style="width: 50%; height: auto; border-radius: 10px;">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # Adicionar CSS para personalizar o layout e o fundo
 st.markdown(
