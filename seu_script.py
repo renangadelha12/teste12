@@ -5,16 +5,17 @@ import altair as alt
 st.set_page_config(page_title="Dashboard de Dados Meteorológicos", layout="wide")
 st.markdown(
     """
-    <div style="text-align: center;">
-        <img src="logo inpe.png" alt="Descrição" style="width: 50%; height: auto; border-radius: 10px;">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="logo inpe.png" alt="Logo do INPE" style="width: 50%; height: auto; border-radius: 10px;">
     </div>
     """,
     unsafe_allow_html=True
 )
-st.image("logo inpe.png", caption="Descrição da Imagem", width=400)
 
+# Adicionar uma imagem usando st.image (com legenda e largura controlada)
+st.image("logo inpe.png", caption="Logo do INPE", width=400)
 
-# Adicionar CSS para personalizar o layout e o fundo
+# Adicionar CSS para personalizar o layout e o fundo da página
 st.markdown(
     """
     <style>
@@ -33,7 +34,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
 #parte de pegar os dados
 topo = ['Date', 'Time', 'Temperatura', 'Hi temp', 'Low Temp', 'Umidade', 'Dew Pt.', 'Velocidade do Vento', 'Wind Dir', 'Wind Run', 'Hi Speed', 'Hi Dir', 'Wind Chill', 'Heat Index', 'THW Index', 'THSW Index', 'Pressão Atm.', 'Precipitação', 'Rain Rate', 'Solar Rad', 'Solar Energy', 'Hi Solar Rad', 'UVI', 'UV Dose', 'Hi UV', 'Heat D-D', 'Cool D-D', 'In Temp', 'In Hum', 'In Dew', 'In Heat', 'In EMC', 'In Air Density', 'ET', 'Wind Samp', 'Wind TX', 'ISS Recept', 'Arc Int.']
 dados = 'dall.txt'
