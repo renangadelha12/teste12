@@ -2,30 +2,29 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import altair as alt
-# Carregar os dados
 st.set_page_config(page_title="Dashboard de Dados Meteorológicos", layout="wide")
+
+# Adicionar CSS para personalizar o layout e o fundo
 st.markdown(
     """
     <style>
-    /* Controlar largura do conteúdo */
+    /* Alterar fundo de toda a página */
+    .stApp {
+        background-color: #e6f7ff; /* Azul claro */
+    }
+    /* Centralizar o conteúdo e controlar largura */
     .main {
         max-width: 90%; /* Define a largura máxima */
         margin: 0 auto; /* Centraliza horizontalmente */
-        background-color: #e6f7ff; /* Azul claro */
         padding: 20px; /* Adiciona espaço interno */
         border-radius: 10px; /* Suaviza bordas */
-    }
-    /* Alterar fundo de toda a página */
-    body {
-        background-color: #e6f7ff; /* Azul claro */
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Seu código do dashboard continua aqui
-st.markdown('<h1 style="color:green">Dashboard de Dados Meteorológicos - Vantage Pro 2</h1>', unsafe_allow_html=True)
+#parte de pegar os dados
 topo = ['Date', 'Time', 'Temperatura', 'Hi temp', 'Low Temp', 'Umidade', 'Dew Pt.', 'Velocidade do Vento', 'Wind Dir', 'Wind Run', 'Hi Speed', 'Hi Dir', 'Wind Chill', 'Heat Index', 'THW Index', 'THSW Index', 'Pressão Atm.', 'Precipitação', 'Rain Rate', 'Solar Rad', 'Solar Energy', 'Hi Solar Rad', 'UVI', 'UV Dose', 'Hi UV', 'Heat D-D', 'Cool D-D', 'In Temp', 'In Hum', 'In Dew', 'In Heat', 'In EMC', 'In Air Density', 'ET', 'Wind Samp', 'Wind TX', 'ISS Recept', 'Arc Int.']
 dados = 'dall.txt'
 
