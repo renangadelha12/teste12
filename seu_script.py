@@ -68,7 +68,6 @@ st.markdown('<h1 style="color:orange">Dashboard de Dados Meteorológicos - Vanta
 #mes_selecionado = st.selectbox('Selecione o mês', meses_lista, index=0)
 dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
 variavel_grafico=st.selectbox('Selecione a variavel para graficar',variaveis,index=0)
-ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
 
 
 # Filtrando os dados
@@ -93,6 +92,7 @@ chart = alt.Chart(davis_selecionado1).mark_line().encode(
 )
 
 st.altair_chart(chart, use_container_width=True)
+ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
 
 davis_selecionado_ano = davis[davis['Year'] == ano_selecionado]
 
