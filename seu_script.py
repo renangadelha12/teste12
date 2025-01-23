@@ -65,10 +65,11 @@ st.markdown('<h1 style="color:orange">Dashboard de Dados Meteorológicos - Vanta
 
 
 # Seleção de ano , mês e dia
-ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
 #mes_selecionado = st.selectbox('Selecione o mês', meses_lista, index=0)
 dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
 variavel_grafico=st.selectbox('Selecione a variavel para graficar',variaveis,index=0)
+ano_selecionado = st.selectbox('Selecione o ano', anos_lista, index=0)
+
 
 # Filtrando os dados
 #davis_selecionado = davis[(davis['Year'] == ano_selecionado) & (davis['Mês'] == mes_selecionado)]
