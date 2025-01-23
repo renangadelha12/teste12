@@ -67,7 +67,7 @@ st.markdown('<h1 style="color:orange">Dashboard de Dados Meteorológicos - Vanta
 # Seleção de ano , mês e dia
 #mes_selecionado = st.selectbox('Selecione o mês', meses_lista, index=0)
 dia_selecionado = st.selectbox('Selecione o dia',dias_lista,index=0)
-variavel_grafico=st.selectbox('Selecione a variavel para graficar',variaveis,index=0)
+variavel_grafico=st.selectbox('Selecione a variável para graficar',variaveis,index=0)
 
 
 # Filtrando os dados
