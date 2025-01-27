@@ -128,7 +128,7 @@ if parametro_analise == 'Mínimos':
 st.markdown(f'Aqui está sendo realizada uma analise em {parametro_analise}', unsafe_allow_html=True)
 #davis_analise1 = davis[davis['Year'] == ano_selecionado].groupby('Mês')[variavel_grafico].agg(parametro_analise).reset_index()
 # Exibindo os dados em formato de tabela
-st.write(davis_analise1)
+#st.write(davis_analise1)
 #st.write(davis_selecionado1[['Hora', 'Temperatura', 'Precipitação','Wind Dir','Velocidade do Vento']])
 
 
