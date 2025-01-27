@@ -127,10 +127,6 @@ if parametro_analise == 'Mínimos':
     parametro_analise = 'min'
 st.markdown(f'Aqui está sendo realizada uma analise em {parametro_analise}', unsafe_allow_html=True)
 
-
-
-
-
 # Exibindo os dados em formato de tabela
 #st.write(davis_selecionado1[['Hora', 'Temperatura', 'Precipitação','Wind Dir','Velocidade do Vento']])
 
