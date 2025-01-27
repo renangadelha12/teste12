@@ -2,3 +2,4 @@ dash
 streamlit
 plotly
 matplotlib
+pandas
