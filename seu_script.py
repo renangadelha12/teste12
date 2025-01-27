@@ -119,7 +119,9 @@ st.altair_chart(chart_rain, use_container_width=True)
 
 #aqui nos vamos fazer a parte que bota o gráfico de observações anuais  - analise 1
 parametro_analise=st.selectbox('Selecione a como deseje realizar a plotagem dos dados:',tipos_de_analise,index=0)
-
+if parametro_analise == 'Média':
+    parametro_analise = 'mean'
+print(parametro_analise)
 
 
 
