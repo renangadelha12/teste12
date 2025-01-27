@@ -60,7 +60,7 @@ anos_lista = list(davis['Year'].unique())
 meses_lista = list(davis['Mês'].unique())
 dias_lista=list(davis['Date'].unique())
 variaveis=list(topo)
-tipos_de_analise=list('média','máximos','minimos')
+tipos_de_analise=list(['média','máximos','minimos'])
 # Usando HTML para estilizar o título
 st.markdown('<h1 style="color:orange">Dashboard de Dados Meteorológicos - Vantage Pro 2</h1> - Davis Instruments', unsafe_allow_html=True)
 
