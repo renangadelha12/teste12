@@ -119,8 +119,7 @@ st.altair_chart(chart_rain, use_container_width=True)
 
 #aqui nos vamos fazer a parte que bota o gráfico de observações anuais  - analise 1
 parametro_analise=st.selectbox('Selecione a como deseje realizar a plotagem dos dados:',tipos_de_analise,index=0)
-ano_analise1 = st.selectbox('Selecione o ano', anos_lista, index=0)
-variavel_analise1=st.selectbox('Selecione a variável para graficar',variaveis,index=0)
+
 
 
 
