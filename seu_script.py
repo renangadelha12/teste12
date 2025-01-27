@@ -60,7 +60,7 @@ anos_lista = list(davis['Year'].unique())
 meses_lista = list(davis['Mês'].unique())
 dias_lista=list(davis['Date'].unique())
 variaveis=list(topo)
-tipos_de_analise=list(['média','máximos','minimos'])
+tipos_de_analise=list(['Média','Máximos','Minimos'])
 # Usando HTML para estilizar o título
 st.markdown('<h1 style="color:orange">Dashboard de Dados Meteorológicos - Vantage Pro 2</h1>', unsafe_allow_html=True)
 
@@ -116,8 +116,14 @@ chart_rain = alt.Chart(precipitacao_por_mes).mark_arc().encode(
 
 # Exibindo o gráfico no Streamlit
 st.altair_chart(chart_rain, use_container_width=True)
-#aqui nos vamos fazer a parte que bota o gráfico de observações anuais
+
+#aqui nos vamos fazer a parte que bota o gráfico de observações anuais  - analise 1
 parametro_analise=st.selectbox('Selecione a como deseje realizar a plotagem dos dados:',tipos_de_analise,index=0)
+ano_analise1 = st.selectbox('Selecione o ano', anos_lista, index=0)
+variavel_analise1=st.selectbox('Selecione a variável para graficar',variaveis,index=0)
+
+
+
 
 # Exibindo os dados em formato de tabela
 #st.write(davis_selecionado1[['Hora', 'Temperatura', 'Precipitação','Wind Dir','Velocidade do Vento']])
