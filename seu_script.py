@@ -121,6 +121,10 @@ st.altair_chart(chart_rain, use_container_width=True)
 parametro_analise=st.selectbox('Selecione a como deseje realizar a plotagem dos dados:',tipos_de_analise,index=0)
 if parametro_analise == 'Média':
     parametro_analise = 'mean'
+if parametro_analise == 'Máximos':
+    parametro_analise = 'max'
+if parametro_analise == 'Mínimos':
+    parametro_analise = 'min'
 st.markdown(f'Aqui está sendo realizada uma analise em {parametro_analise}', unsafe_allow_html=True)
 
 
